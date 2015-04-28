@@ -1,0 +1,131 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  Internal Error (javaClasses.cpp:126), pid=7992, tid=3460
+#  fatal error: Invalid layout of preloaded class
+#
+# JRE version:  (8.0_25-b18) (build )
+# Java VM: Java HotSpot(TM) Client VM (25.25-b02 mixed mode windows-x86 )
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.sun.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0117c400):  JavaThread "Unknown thread" [_thread_in_vm, id=3460, stack(0x01750000,0x017a0000)]
+
+Stack: [0x01750000,0x017a0000],  sp=0x0179f318,  free space=316k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x19796b]
+V  [jvm.dll+0x1908e6]
+V  [jvm.dll+0x3b4e9]
+V  [jvm.dll+0x3b69e]
+V  [jvm.dll+0x4a063]
+V  [jvm.dll+0x9dc8e]
+V  [jvm.dll+0x9df52]
+V  [jvm.dll+0x145a01]
+V  [jvm.dll+0x169ab8]
+V  [jvm.dll+0xdaea1]
+C  [javaw.exe+0x13e4]
+C  [javaw.exe+0x1eb7]
+C  [javaw.exe+0xaba1]
+C  [javaw.exe+0xac2b]
+C  [kernel32.dll+0x4ee1c]
+C  [ntdll.dll+0x6377b]
+C  [ntdll.dll+0x6374e]
+C  0x00000000
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x0117c400 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=3460, stack(0x01750000,0x017a0000)]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (10 events):
+Event: 0.012 loading class java/lang/CharSequence done
+Event: 0.012 loading class java/lang/String done
+Event: 0.012 loading class java/lang/Class
+Event: 0.012 loading class java/lang/reflect/AnnotatedElement
+Event: 0.012 loading class java/lang/reflect/AnnotatedElement done
+Event: 0.012 loading class java/lang/reflect/GenericDeclaration
+Event: 0.012 loading class java/lang/reflect/GenericDeclaration done
+Event: 0.013 loading class java/lang/reflect/Type
+Event: 0.013 loading class java/lang/reflect/Type done
+Event: 0.013 loading class java/lang/Class done
+
+
+Dynamic libraries:
+0x01240000 - 0x01270000 	C:\Program Files\Java\jre1.8.0_25\bin\javaw.exe
+0x77570000 - 0x776ac000 	C:\Windows\SYSTEM32\ntdll.dll
+0x76090000 - 0x76164000 	C:\Windows\system32\kernel32.dll
+0x758f0000 - 0x7593b000 	C:\Windows\system32\KERNELBASE.dll
+0x761e0000 - 0x76280000 	C:\Windows\system32\ADVAPI32.dll
+0x776f0000 - 0x7779c000 	C:\Windows\system32\msvcrt.dll
+0x776d0000 - 0x776e9000 	C:\Windows\SYSTEM32\sechost.dll
+0x75f30000 - 0x75fd2000 	C:\Windows\system32\RPCRT4.dll
+0x774a0000 - 0x77569000 	C:\Windows\system32\USER32.dll
+0x75dc0000 - 0x75e0e000 	C:\Windows\system32\GDI32.dll
+0x776b0000 - 0x776ba000 	C:\Windows\system32\LPK.dll
+0x75a00000 - 0x75a9d000 	C:\Windows\system32\USP10.dll
+0x744a0000 - 0x7463e000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.17514_none_41e6975e2bd6f2b2\COMCTL32.dll
+0x76ed0000 - 0x76f27000 	C:\Windows\system32\SHLWAPI.dll
+0x761b0000 - 0x761cf000 	C:\Windows\system32\IMM32.DLL
+0x75b30000 - 0x75bfc000 	C:\Windows\system32\MSCTF.dll
+0x696e0000 - 0x6979f000 	C:\Program Files\Java\jre1.8.0_25\bin\msvcr100.dll
+0x59210000 - 0x595b4000 	C:\Program Files\Java\jre1.8.0_25\bin\client\jvm.dll
+0x73af0000 - 0x73af7000 	C:\Windows\system32\WSOCK32.dll
+0x76170000 - 0x761a5000 	C:\Windows\system32\WS2_32.dll
+0x77130000 - 0x77136000 	C:\Windows\system32\NSI.dll
+0x74bc0000 - 0x74bf2000 	C:\Windows\system32\WINMM.dll
+0x761d0000 - 0x761d5000 	C:\Windows\system32\PSAPI.DLL
+0x73e20000 - 0x73e2c000 	C:\Program Files\Java\jre1.8.0_25\bin\verify.dll
+0x700e0000 - 0x70101000 	C:\Program Files\Java\jre1.8.0_25\bin\java.dll
+0x73ad0000 - 0x73ae3000 	C:\Program Files\Java\jre1.8.0_25\bin\zip.dll
+0x737c0000 - 0x738ab000 	C:\Windows\system32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=GBK -Xbootclasspath:E:\adt-bundle-windows-x86-20130729\sdk\platforms\android-18\android.jar 
+java_command: itat.zttc.login.GetPostUtil
+java_class_path (initial): E:\android_project\Login\bin\classes;E:\android_project\Login\libs\android-support-v4.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+CLASSPATH=.;%JAVA_HOME%\lib\tools.jar;%java_home%/lib/mysql-connector-java-5.1.26-bin.jar;D:\Program Files\Java\jdk1.6.0_30\bin\mysql-connector-java-5.1.26-bin.jar
+PATH=C:/Program Files/Java/jre1.8.0_25/bin/client;C:/Program Files/Java/jre1.8.0_25/bin;C:/Program Files/Java/jre1.8.0_25/lib/i386;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;%JAVA_HOME%\bin;D:\android-sdk\sdk\tools;d:\Program Files\MATLAB\R2014a\runtime\win32;d:\Program Files\MATLAB\R2014a\bin;d:\Program Files\MATLAB\R2014a\polyspace\bin;D:\upupw\MySQL\bin;D:\Python33;D:\Python33\Lib\site-packages\Django-1.7-py3.3.egg\django;D:\Python33\Scripts;C:\Program Files\MySQL\MySQL Fabric 1.5.3 & MySQL Utilities 1.5.3 1.5\;C:\Program Files\MySQL\MySQL Fabric 1.5.3 & MySQL Utilities 1.5.3 1.5\Doctrine extensions for PHP\;E:\adt-bundle-windows-x86-20130729\eclipse;
+USERNAME=Administrator
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 37 Stepping 5, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 Build 7601 Service Pack 1
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 37 stepping 5, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, ht, tsc, tscinvbit
+
+Memory: 4k page, physical 3136192k(991432k free), swap 6270636k(2223940k free)
+
+vm_info: Java HotSpot(TM) Client VM (25.25-b02) for windows-x86 JRE (1.8.0_25-b18), built on Oct  7 2014 14:31:05 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Sat Mar 14 22:22:30 2015
+elapsed time: 0 seconds (0d 0h 0m 0s)
+

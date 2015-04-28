@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+ <LinearLayout
+        android:layout_width="230px"
+        android:layout_height="300px"
+        android:orientation="vertical" >
+    
+    <ImageView
+        android:id="@+id/msg_list_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/lo" />
+</LinearLayout>
+
+ 
+<LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="300px"
+        android:orientation="vertical" >
+				     <LinearLayout
+				         android:layout_width="match_parent"
+				         android:layout_height="wrap_content"
+				         android:orientation="horizontal" >
+				           <ImageView
+						        android:layout_width="wrap_content"
+						        android:layout_height="wrap_content"
+						        android:src="@drawable/lock" />
+				           <TextView
+					            android:id="@+id/msg_list_title"
+					            android:layout_width="wrap_content"
+					            android:layout_height="wrap_content"
+					            android:text="海外考试中324444444444444444心招聘信息"
+					            android:textSize="32px" />
+				    </LinearLayout>
+				    
+				     
+			        <LinearLayout
+			         android:layout_width="match_parent"
+			         android:layout_height="wrap_content"
+			         android:orientation="horizontal" >
+					     <ImageView
+						        android:layout_width="wrap_content"
+						        android:layout_height="wrap_content"
+						        android:src="@drawable/lock" />
+					      <TextView
+					            android:id="@+id/msg_list_time"
+					            android:layout_width="wrap_content"
+					            android:layout_height="wrap_content"
+					            android:text="04-10:00至04—10"
+					            android:textSize="32px" />
+					</LinearLayout>
+					
+			        
+					
+					<LinearLayout
+			         android:layout_width="match_parent"
+			         android:layout_height="wrap_content"
+			         android:orientation="horizontal" >
+					      <ImageView
+						        android:layout_width="wrap_content"
+						        android:layout_height="wrap_content"
+						        android:src="@drawable/lock" />
+					      <TextView
+					            android:id="@+id/msg_list_address"
+					            android:layout_width="wrap_content"
+					            android:layout_height="wrap_content"
+					            android:text="交大徐汇浩然大厦5楼"
+					            android:textSize="32px" />
+		           </LinearLayout>
+    
+                     <LinearLayout
+			         android:layout_width="match_parent"
+			         android:layout_height="wrap_content"
+			         android:orientation="horizontal" >
+					      <ImageView
+						        android:layout_width="wrap_content"
+						        android:layout_height="wrap_content"
+						        android:src="@drawable/lock" />
+					      <TextView
+					            android:id="@+id/msg_list_deparment"
+					            android:layout_width="wrap_content"
+					            android:layout_height="wrap_content"
+					            android:text="上海交通大学继续教育学院"
+					            android:textSize="32px" />
+		           </LinearLayout>
+  
+
+    </LinearLayout>
+
+</LinearLayout>
