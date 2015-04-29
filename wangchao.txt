@@ -1,3 +1,5 @@
 by wangchao
 
 by szlcw
+
+int i = 1;
