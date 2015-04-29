@@ -4,3 +4,4 @@ by szlcw
 
 int i = 1;
 int j = 2;
+int y = 1;
