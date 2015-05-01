@@ -3,10 +3,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-      <include layout="@layout/titlebar"/>
-    <TextView
-            android:id="@+id/abc"
+    <include layout="@layout/titlebar"/>
+	<ScrollView 
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical"	    >
+      <LinearLayout 
+        android:id="@+id/visibility_layout"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        >        
+        <include layout="@layout/information_show_item"/>
+        <TextView 
+            android:id="@+id/content"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="40px" />
+            android:layout_height="match_parent"            
+            android:padding="10dp"  
+            android:text="content"/>
+        <ImageView 
+            android:src="@drawable/spilt_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:scaleType="fitXY"/>
+    </LinearLayout>
+    </ScrollView>
+    
 </LinearLayout>

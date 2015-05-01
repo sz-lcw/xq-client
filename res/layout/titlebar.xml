@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#FFE4E1"
-        android:text="上一步"
+        android:text="返回"
         android:textSize="20dp" />
 
     <TextView

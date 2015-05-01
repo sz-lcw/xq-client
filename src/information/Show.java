@@ -23,11 +23,12 @@ public class Show extends Activity {
 		setContentView(R.layout.information_list_show);
         //传值
 		Intent intent=getIntent();
-		String StringE=intent.getStringExtra("a");
-		TextView text=(TextView)findViewById(R.id.abc);
-		text.setText(StringE);
+		String stringE=intent.getStringExtra("a");
+		TextView text=(TextView)findViewById(R.id.title);
+		text.setText(stringE);
 		
 		init();
+		getData();
 		//为返回键添加监听事件
 		clickReturnButton();
 	}
@@ -48,5 +49,15 @@ public class Show extends Activity {
 		returnButton=(Button) findViewById(R.id.return_button);
 	}
 	
+	public static void actionStart(){
+		
+	}
+	//获取数据
+	private void getData(){
+		//启动时间
+		TextView textBeginTime=(TextView)findViewById(R.id.begin_time);
+		textBeginTime.setText("2015-04-30" + " " + "23:38");
+		
+	}
 	
 }
