@@ -24,7 +24,8 @@ public class RegisterActivity extends Activity {
 	private EditText mailbox;
 	private EditText school;
 	private Thread registerThread;
-    private Handler registerHandler=new Handler();
+	private Handler registerHandler = new Handler();
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -35,67 +36,66 @@ public class RegisterActivity extends Activity {
 	}
 
 	private void initregisterButton() {
-		registerButton.setOnClickListener(new OnClickListener() {		
+		registerButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
 				checkInput();
-				registerThread=new Thread(new Runnable() {		
+				registerThread = new Thread(new Runnable() {
 					@Override
 					public void run() {
 						JSONObject data = new JSONObject();
-			            try {
-			                //将用户填写的账号和密码存放到JSONObject中
-			                data.put("username",username.getText().toString());
-			                data.put("password", password.getText().toString());
-			                data.put("mailbox",mailbox.getText().toString());
-			                data.put("school", school.getText().toString());
-			            } catch (JSONException e1) {
-			                e1.printStackTrace();
-			            }
-                        //获取注册结果
-			            String result=HttpUtil.eXchangeDataByHttp(data,"/register");
-			            System.out.println(result);
-			            if(result.equals("Correct")){
-			            	registerHandler.post(new Runnable() {
+						try {
+							// 将用户填写的账号和密码存放到JSONObject中
+							data.put("username", username.getText().toString());
+							data.put("password", password.getText().toString());
+							data.put("mailbox", mailbox.getText().toString());
+							data.put("school", school.getText().toString());
+						} catch (JSONException e1) {
+							e1.printStackTrace();
+						}
+						// 获取注册结果
+						String result = HttpUtil.eXchangeDataByHttp(data,
+								"/register");
+						System.out.println(result);
+						if (result.equals("Correct")) {
+							registerHandler.post(new Runnable() {
 								@Override
 								public void run() {
 									Toast.makeText(RegisterActivity.this,
-											 "注册成功",
-											 Toast.LENGTH_LONG).show();
+											"注册成功", Toast.LENGTH_LONG).show();
 									Intent intent = new Intent();
-									intent.setClass(RegisterActivity.this, ZhuActivity.class);
+									intent.setClass(RegisterActivity.this,
+											ZhuActivity.class);
 									startActivity(intent);
 								}
 							});
-			            }else {
-			            	registerHandler.post(new Runnable() {
+						} else {
+							registerHandler.post(new Runnable() {
 								@Override
 								public void run() {
 									Toast.makeText(RegisterActivity.this,
-											 "用户名已被占用,请更改用户名",
-											 Toast.LENGTH_LONG).show();
+											"用户名已被占用,请更改用户名", Toast.LENGTH_LONG)
+											.show();
 								}
 							});
 						}
 					}
 				});
-			  registerThread.start();
+				registerThread.start();
 			}
 
 			private void checkInput() {
-			    String usString=username.getText().toString();
-			    String paString=password.getText().toString();
-			    if("".equals(usString)&&"".equals(paString)){
-			    	Toast.makeText(RegisterActivity.this,
-							 "用户名跟密码不能为空",
-							 Toast.LENGTH_LONG).show();
-			    	return;
-			    }
+				String usString = username.getText().toString();
+				String paString = password.getText().toString();
+				if ("".equals(usString) && "".equals(paString)) {
+					Toast.makeText(RegisterActivity.this, "用户名跟密码不能为空",
+							Toast.LENGTH_LONG).show();
+					return;
+				}
 			}
 		});
 	}
 
-	
 	private void init() {
 		username = (EditText) this.findViewById(R.id.register_username);
 		password = (EditText) this.findViewById(R.id.register_password);
@@ -106,8 +106,8 @@ public class RegisterActivity extends Activity {
 
 	@Override
 	protected void onDestroy() {
-		if(registerThread!=null)
-			registerThread=null;
+		if (registerThread != null)
+			registerThread = null;
 		super.onDestroy();
 	}
 }
