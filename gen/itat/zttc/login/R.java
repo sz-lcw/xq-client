@@ -25,38 +25,12 @@ public final class R {
     }
     public static final class drawable {
         public static final int adress=0x7f020000;
-<<<<<<< HEAD
-        public static final int bottom_bar=0x7f020001;
-        public static final int ic_launcher=0x7f020002;
-        public static final int lo=0x7f020003;
-        public static final int lock=0x7f020004;
-        public static final int logimg=0x7f020005;
-        public static final int main=0x7f020006;
-        public static final int page_indicator_focused=0x7f020007;
-        public static final int page_indicator_unfocused=0x7f020008;
-        public static final int persion=0x7f020009;
-        public static final int spilt_line=0x7f02000a;
-        public static final int tab_address_normal=0x7f02000b;
-        public static final int tab_address_pressed=0x7f02000c;
-        public static final int tab_bg2=0x7f02000d;
-        public static final int tab_find_frd_normal=0x7f02000e;
-        public static final int tab_find_frd_pressed=0x7f02000f;
-        public static final int tab_settings_normal=0x7f020010;
-        public static final int tab_settings_pressed=0x7f020011;
-        public static final int tab_weixin_normal=0x7f020012;
-        public static final int tab_weixin_pressed=0x7f020013;
-        public static final int title_bar=0x7f020014;
-        public static final int view1=0x7f020015;
-        public static final int view2=0x7f020016;
-        public static final int view3=0x7f020017;
-        public static final int xlistview_arrow=0x7f020018;
-=======
         public static final int apple_pic=0x7f020001;
         public static final int banana_pic=0x7f020002;
         public static final int bottom_bar=0x7f020003;
         public static final int cherry_pic=0x7f020004;
-        public static final int clr_normal=0x7f020025;
-        public static final int clr_pressed=0x7f020026;
+        public static final int clr_normal=0x7f020026;
+        public static final int clr_pressed=0x7f020027;
         public static final int collect=0x7f020005;
         public static final int grape_pic=0x7f020006;
         public static final int ic_launcher=0x7f020007;
@@ -73,29 +47,28 @@ public final class R {
         public static final int persion=0x7f020012;
         public static final int pineapple_pic=0x7f020013;
         public static final int sett=0x7f020014;
-        public static final int strawberry_pic=0x7f020015;
-        public static final int tab_address_normal=0x7f020016;
-        public static final int tab_address_pressed=0x7f020017;
-        public static final int tab_bg2=0x7f020018;
-        public static final int tab_find_frd_normal=0x7f020019;
-        public static final int tab_find_frd_pressed=0x7f02001a;
-        public static final int tab_settings_normal=0x7f02001b;
-        public static final int tab_settings_pressed=0x7f02001c;
-        public static final int tab_weixin_normal=0x7f02001d;
-        public static final int tab_weixin_pressed=0x7f02001e;
-        public static final int title_bar=0x7f02001f;
-        public static final int view1=0x7f020020;
-        public static final int view2=0x7f020021;
-        public static final int view3=0x7f020022;
-        public static final int watermelon_pic=0x7f020023;
-        public static final int xlistview_arrow=0x7f020024;
->>>>>>> branch 'dev' of https://github.com/sz-lcw/xq-client.git
+        public static final int spilt_line=0x7f020015;
+        public static final int strawberry_pic=0x7f020016;
+        public static final int tab_address_normal=0x7f020017;
+        public static final int tab_address_pressed=0x7f020018;
+        public static final int tab_bg2=0x7f020019;
+        public static final int tab_find_frd_normal=0x7f02001a;
+        public static final int tab_find_frd_pressed=0x7f02001b;
+        public static final int tab_settings_normal=0x7f02001c;
+        public static final int tab_settings_pressed=0x7f02001d;
+        public static final int tab_weixin_normal=0x7f02001e;
+        public static final int tab_weixin_pressed=0x7f02001f;
+        public static final int title_bar=0x7f020020;
+        public static final int view1=0x7f020021;
+        public static final int view2=0x7f020022;
+        public static final int view3=0x7f020023;
+        public static final int watermelon_pic=0x7f020024;
+        public static final int xlistview_arrow=0x7f020025;
     }
     public static final class id {
-<<<<<<< HEAD
         public static final int TextView01=0x7f090020;
         public static final int TextView02=0x7f09001f;
-        public static final int action_settings=0x7f090041;
+        public static final int action_settings=0x7f09004c;
         public static final int apply_activity_btn=0x7f090021;
         public static final int apply_btn=0x7f09001a;
         public static final int apply_end=0x7f090025;
@@ -105,20 +78,13 @@ public final class R {
         public static final int apply_time=0x7f090024;
         public static final int begin_time=0x7f090022;
         public static final int button1=0x7f090005;
+        public static final int collect=0x7f09002b;
         public static final int content=0x7f09001d;
+        public static final int dialog=0x7f09002d;
         public static final int end_time=0x7f090023;
         public static final int findpassword=0x7f090007;
         public static final int host=0x7f090026;
         public static final int id_content=0x7f090029;
-=======
-        public static final int abc=0x7f090017;
-        public static final int action_settings=0x7f09003c;
-        public static final int button1=0x7f090005;
-        public static final int collect=0x7f09001b;
-        public static final int dialog=0x7f09001d;
-        public static final int findpassword=0x7f090007;
-        public static final int id_content=0x7f090019;
->>>>>>> branch 'dev' of https://github.com/sz-lcw/xq-client.git
         public static final int id_tab_address=0x7f090011;
         public static final int id_tab_address_img=0x7f090012;
         public static final int id_tab_frd=0x7f09000f;
@@ -128,37 +94,27 @@ public final class R {
         public static final int id_tab_weixin=0x7f09000d;
         public static final int id_tab_weixin_img=0x7f09000e;
         public static final int imageView1=0x7f090000;
-<<<<<<< HEAD
-        public static final int image_tap4=0x7f090034;
-=======
-        public static final int image_tap4=0x7f09002f;
-        public static final int img1=0x7f09001e;
-        public static final int img2=0x7f09001f;
-        public static final int img3=0x7f090020;
-        public static final int img4=0x7f090021;
->>>>>>> branch 'dev' of https://github.com/sz-lcw/xq-client.git
+        public static final int image_tap4=0x7f09003f;
+        public static final int img1=0x7f09002e;
+        public static final int img2=0x7f09002f;
+        public static final int img3=0x7f090030;
+        public static final int img4=0x7f090031;
         public static final int info_tab3=0x7f090015;
-<<<<<<< HEAD
+        public static final int item_detail=0x7f090035;
+        public static final int item_image=0x7f090033;
+        public static final int item_info=0x7f090034;
+        public static final int item_name=0x7f090032;
         public static final int listView1=0x7f090008;
         public static final int list_item_textview=0x7f090028;
-=======
-        public static final int item_detail=0x7f090025;
-        public static final int item_image=0x7f090023;
-        public static final int item_info=0x7f090024;
-        public static final int item_name=0x7f090022;
-        public static final int listView1=0x7f090008;
-        public static final int list_item_textview=0x7f090018;
-        public static final int list_view=0x7f09002b;
-        public static final int list_view1=0x7f09002c;
->>>>>>> branch 'dev' of https://github.com/sz-lcw/xq-client.git
+        public static final int list_view=0x7f09003b;
+        public static final int list_view1=0x7f09003c;
         public static final int login_password=0x7f090004;
         public static final int login_username=0x7f090002;
-<<<<<<< HEAD
-        public static final int msg_list_address=0x7f090030;
-        public static final int msg_list_deparment=0x7f090031;
-        public static final int msg_list_image=0x7f09002d;
-        public static final int msg_list_time=0x7f09002f;
-        public static final int msg_list_title=0x7f09002e;
+        public static final int msg_list_address=0x7f090039;
+        public static final int msg_list_deparment=0x7f09003a;
+        public static final int msg_list_image=0x7f090036;
+        public static final int msg_list_time=0x7f090038;
+        public static final int msg_list_title=0x7f090037;
         public static final int place=0x7f090027;
         public static final int register=0x7f090006;
         public static final int register_mailbox=0x7f09000c;
@@ -166,62 +122,27 @@ public final class R {
         public static final int register_school=0x7f09000b;
         public static final int register_username=0x7f090009;
         public static final int return_activity_btn=0x7f090019;
-        public static final int return_btn=0x7f090036;
-        public static final int spinner1=0x7f090037;
+        public static final int return_btn=0x7f090041;
+        public static final int spinner1=0x7f090042;
         public static final int tab04_persionSetting=0x7f09002a;
         public static final int tab04_setting=0x7f09002c;
-=======
-        public static final int msg_list_address=0x7f090029;
-        public static final int msg_list_deparment=0x7f09002a;
-        public static final int msg_list_image=0x7f090026;
-        public static final int msg_list_time=0x7f090028;
-        public static final int msg_list_title=0x7f090027;
-        public static final int register=0x7f090006;
-        public static final int register_mailbox=0x7f09000c;
-        public static final int register_password=0x7f09000a;
-        public static final int register_school=0x7f09000b;
-        public static final int register_username=0x7f090009;
-        public static final int return_button=0x7f090031;
-        public static final int spinner1=0x7f090032;
-        public static final int tab04_persionSetting=0x7f09001a;
-        public static final int tab04_setting=0x7f09001c;
->>>>>>> branch 'dev' of https://github.com/sz-lcw/xq-client.git
         public static final int textView1=0x7f090001;
         public static final int textView2=0x7f090003;
-<<<<<<< HEAD
-        public static final int text_tap4=0x7f090035;
+        public static final int text_tap4=0x7f090040;
         public static final int title=0x7f09001c;
-        public static final int viewGroup=0x7f090033;
-        public static final int viewPager=0x7f090032;
+        public static final int viewGroup=0x7f09003e;
+        public static final int viewPager=0x7f09003d;
         public static final int visibility_layout=0x7f09001b;
-        public static final int ww=0x7f09002b;
-=======
-        public static final int text_tap4=0x7f090030;
-        public static final int viewGroup=0x7f09002e;
-        public static final int viewPager=0x7f09002d;
->>>>>>> branch 'dev' of https://github.com/sz-lcw/xq-client.git
         public static final int xListView=0x7f090016;
-<<<<<<< HEAD
-        public static final int xlistview_footer_content=0x7f090038;
-        public static final int xlistview_footer_hint_textview=0x7f09003a;
-        public static final int xlistview_footer_progressbar=0x7f090039;
-        public static final int xlistview_header_arrow=0x7f09003f;
-        public static final int xlistview_header_content=0x7f09003b;
-        public static final int xlistview_header_hint_textview=0x7f09003d;
-        public static final int xlistview_header_progressbar=0x7f090040;
-        public static final int xlistview_header_text=0x7f09003c;
-        public static final int xlistview_header_time=0x7f09003e;
-=======
-        public static final int xlistview_footer_content=0x7f090033;
-        public static final int xlistview_footer_hint_textview=0x7f090035;
-        public static final int xlistview_footer_progressbar=0x7f090034;
-        public static final int xlistview_header_arrow=0x7f09003a;
-        public static final int xlistview_header_content=0x7f090036;
-        public static final int xlistview_header_hint_textview=0x7f090038;
-        public static final int xlistview_header_progressbar=0x7f09003b;
-        public static final int xlistview_header_text=0x7f090037;
-        public static final int xlistview_header_time=0x7f090039;
->>>>>>> branch 'dev' of https://github.com/sz-lcw/xq-client.git
+        public static final int xlistview_footer_content=0x7f090043;
+        public static final int xlistview_footer_hint_textview=0x7f090045;
+        public static final int xlistview_footer_progressbar=0x7f090044;
+        public static final int xlistview_header_arrow=0x7f09004a;
+        public static final int xlistview_header_content=0x7f090046;
+        public static final int xlistview_header_hint_textview=0x7f090048;
+        public static final int xlistview_header_progressbar=0x7f09004b;
+        public static final int xlistview_header_text=0x7f090047;
+        public static final int xlistview_header_time=0x7f090049;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -230,7 +151,6 @@ public final class R {
         public static final int bottom=0x7f030003;
         public static final int discovery=0x7f030004;
         public static final int information=0x7f030005;
-<<<<<<< HEAD
         public static final int information_apply=0x7f030006;
         public static final int information_apply_titlebar=0x7f030007;
         public static final int information_list_show=0x7f030008;
@@ -242,30 +162,21 @@ public final class R {
         public static final int list_item=0x7f03000e;
         public static final int main=0x7f03000f;
         public static final int me=0x7f030010;
-=======
-        public static final int information_list_show=0x7f030006;
-        public static final int information_slide_picture1=0x7f030007;
-        public static final int information_slide_picture2=0x7f030008;
-        public static final int information_slide_picture3=0x7f030009;
-        public static final int list_item=0x7f03000a;
-        public static final int main=0x7f03000b;
-        public static final int me=0x7f03000c;
-        public static final int me_dialog=0x7f03000d;
-        public static final int me_icon=0x7f03000e;
-        public static final int me_item=0x7f03000f;
-        public static final int me_item1=0x7f030010;
->>>>>>> branch 'dev' of https://github.com/sz-lcw/xq-client.git
-        public static final int message=0x7f030011;
-        public static final int msg_list=0x7f030012;
-        public static final int persion_setting=0x7f030013;
-        public static final int persion_setting1=0x7f030014;
-        public static final int school_sellect_spinner=0x7f030015;
-        public static final int slide=0x7f030016;
-        public static final int tactivity=0x7f030017;
-        public static final int titlebar=0x7f030018;
-        public static final int top=0x7f030019;
-        public static final int xlistview_footer=0x7f03001a;
-        public static final int xlistview_header=0x7f03001b;
+        public static final int me_dialog=0x7f030011;
+        public static final int me_icon=0x7f030012;
+        public static final int me_item=0x7f030013;
+        public static final int me_item1=0x7f030014;
+        public static final int message=0x7f030015;
+        public static final int msg_list=0x7f030016;
+        public static final int persion_setting=0x7f030017;
+        public static final int persion_setting1=0x7f030018;
+        public static final int school_sellect_spinner=0x7f030019;
+        public static final int slide=0x7f03001a;
+        public static final int tactivity=0x7f03001b;
+        public static final int titlebar=0x7f03001c;
+        public static final int top=0x7f03001d;
+        public static final int xlistview_footer=0x7f03001e;
+        public static final int xlistview_header=0x7f03001f;
     }
     public static final class menu {
         public static final int main=0x7f080000;
