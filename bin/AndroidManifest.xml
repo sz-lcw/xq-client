@@ -57,6 +57,10 @@
             android:label="@string/app_name" >
         </activity>
         <activity
+            android:name="information.Apply"
+            android:label="@string/app_name" >
+        </activity>        
+        <activity
             android:name="me.Me_Persion_Setting"
             android:label="@string/app_name" >
         </activity>
