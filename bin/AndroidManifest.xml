@@ -33,11 +33,7 @@
         <activity
             android:name="initial.MainActivity"
             android:label="@string/app_name" >
-<<<<<<< HEAD
 
-=======
-           
->>>>>>> branch 'dev' of https://github.com/sz-lcw/xq-client.git
         </activity>
         <activity
             android:name="initial.RegisterActivity"
@@ -51,19 +47,11 @@
         <activity
             android:name="initial.ZhuActivity"
             android:label="@string/app_name" >
-<<<<<<< HEAD
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>            
-=======
-             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
->>>>>>> branch 'dev' of https://github.com/sz-lcw/xq-client.git
         </activity>
         <activity
             android:name="information.Show"
