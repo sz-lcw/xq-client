@@ -3,185 +3,238 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >   
-        <TextView 
-            android:id="@+id/title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textSize="15sp"
-            android:padding="10dp"
-            android:text="title"/>
+
+
+    	<RelativeLayout
+    	    android:layout_width="match_parent"
+    	    android:layout_height="wrap_content" >
+
+    	    <TextView
+    	        android:id="@+id/textView1"
+    	        android:layout_width="wrap_content"
+    	        android:layout_height="wrap_content"
+    	        android:gravity="bottom|top|fill_horizontal"
+    	        android:paddingTop="10dp"
+    	        android:paddingLeft="10dp"    	        
+    	        android:text="名额："
+    	        android:textSize="15sp" />
+
+    	    <TextView
+    	        android:id="@+id/apply_num"
+    	        android:layout_width="wrap_content"
+    	        android:layout_height="wrap_content"
+    	        android:layout_alignParentTop="true"
+    	        android:layout_toRightOf="@+id/textView1"
+    	        android:gravity="center_vertical"
+    	        android:paddingBottom="5dp"
+    	        android:paddingTop="5dp"
+    	        android:text="不限"
+    	        android:textSize="20sp"
+    	        android:textColor="#FF6600" />
+
+    	    <TextView
+    	        android:id="@+id/TextView02"
+    	        android:layout_width="wrap_content"
+    	        android:layout_height="wrap_content"
+    	        android:layout_alignParentLeft="true"
+    	        android:layout_below="@+id/textView1"
+    	        android:gravity="end"
+    	        android:paddingLeft="10dp"
+    	        android:paddingTop="5dp"
+    	        android:paddingBottom="5dp"
+    	        android:text="0"
+    	        android:textSize="12sp"
+    	        android:textColor="#808080" />
+
+    	    <TextView
+    	        android:id="@+id/TextView01"
+    	        android:layout_width="wrap_content"
+    	        android:layout_height="wrap_content"
+    	        android:layout_alignBaseline="@+id/TextView02"
+    	        android:layout_alignBottom="@+id/TextView02"
+    	        android:layout_toRightOf="@+id/TextView02"
+    	        android:gravity="start"
+    	        android:paddingTop="5dp"
+    	        android:paddingBottom="5dp"
+    	        android:text="人报名"
+    	        android:textSize="12sp"
+    	        android:textColor="#808080" />
+
+    	    <Button
+    	        android:id="@+id/apply_activity_btn"
+    	        android:layout_width="wrap_content"
+    	        android:layout_height="wrap_content"
+    	        android:layout_alignParentRight="true"
+    	        android:layout_alignParentTop="true"
+    	        android:layout_marginRight="10dp"
+    	        android:padding="5dp"
+    	        android:text="我要报名" 
+    	        android:textColor="#FFFFFF"
+    	        android:background="#FF9900"/>
+
+    	</RelativeLayout>
+
         <ImageView 
             android:src="@drawable/spilt_line"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:scaleType="fitXY"/>
-                        
+		<TextView 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:gravity="start"
+		    android:textSize="8sp"
+		    android:padding="5dp"
+		    android:text="活动信息："
+		    android:textColor="#808080"	/>
+		<ImageView 
+            android:src="@drawable/spilt_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:scaleType="fitXY"/>                         
         <LinearLayout 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 			<TextView 
-			    android:layout_width="0dp"
-			    android:layout_weight="1"
+			    android:layout_width="wrap_content"
 			    android:layout_height="wrap_content"
-			    android:gravity="start"
 			    android:textSize="15sp"
-			    android:padding="10dp"
-			    android:text="开始时间："/>              
+			    android:paddingLeft="10dp"
+			    android:paddingTop="5dp"
+			    android:text="活动时间："/>              
 			<TextView 
 			    android:id="@+id/begin_time"
 			    android:layout_height="wrap_content"
 			    android:layout_width="0dp"
 			    android:layout_weight="2"
-			    android:gravity="end"
-			    android:padding="10dp"
+			    android:gravity="center"
+			    android:paddingLeft="10dp"
+			    android:paddingTop="5dp"
+			    android:paddingRight="10dp"
 			    android:textSize="15sp"
-			    />            
-        </LinearLayout>
-        <ImageView 
-            android:src="@drawable/spilt_line"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:scaleType="fitXY"/> 
-<!--结束时间 -->
-        <LinearLayout 
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-			<TextView 
-			    android:layout_width="0dp"
-			    android:layout_weight="1"
+			    android:text="00-00 00:00"
+			    android:textColor="#40404040"	/>
+
+			<TextView
+			    android:layout_width="wrap_content"
 			    android:layout_height="wrap_content"
-				android:gravity="start"
-			    android:textSize="15sp"
-			    android:padding="10dp"
-			    android:text="结束时间："/>              
+			    android:text="到" />
 			<TextView 
 			    android:id="@+id/end_time"
 			    android:layout_height="wrap_content"
 			    android:layout_width="0dp"
 			    android:layout_weight="2"
-			    android:gravity="end"
-			    android:padding="10dp"
+			    android:gravity="center"
+			    android:paddingLeft="10dp"
+			    android:paddingTop="5dp"
+			    android:paddingRight="10dp"
 			    android:textSize="15sp"
-			    />            
+			    android:text="00-00 00:00"
+			    android:textColor="#40404040"/>            
         </LinearLayout>
-        <ImageView 
-            android:src="@drawable/spilt_line"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:scaleType="fitXY"/>
-<!-- 报名开始         -->
+
+<!-- 报名时间        -->
         <LinearLayout 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 			<TextView 
-			    android:layout_width="0dp"
-			    android:layout_weight="1"
+			    android:layout_width="wrap_content"
 			    android:layout_height="wrap_content"
 				android:gravity="start"
 			    android:textSize="15sp"
-			    android:padding="10dp"
+			    android:paddingLeft="10dp"
+			    android:paddingTop="5dp"
 			    android:text="报名开始："/>              
 			<TextView 
 			    android:id="@+id/apply_time"
 			    android:layout_height="wrap_content"
 			    android:layout_width="0dp"
 			    android:layout_weight="2"
-			    android:gravity="end"
-			    android:padding="10dp"
+			    android:gravity="center"
+			    android:paddingLeft="10dp"
+			    android:paddingTop="5dp"
+			    android:paddingRight="10dp"
 			    android:textSize="15sp"
-			    />            
-        </LinearLayout>
-        <ImageView 
-            android:src="@drawable/spilt_line"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:scaleType="fitXY"/>
-<!-- 报名结束        -->
-        <LinearLayout 
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-			<TextView 
-			    android:layout_width="0dp"
-			    android:layout_weight="1"
+			    android:text="00-00 00:00"
+			    android:textColor="#40404040"/>
+			<TextView
+			    android:layout_width="wrap_content"
 			    android:layout_height="wrap_content"
-				android:gravity="start"
-			    android:textSize="15sp"
-			    android:padding="10dp"
-			    android:text="报名结束："/>              
+			    android:text="到" />			
 			<TextView 
 			    android:id="@+id/apply_end"
 			    android:layout_height="wrap_content"
 			    android:layout_width="0dp"
 			    android:layout_weight="2"
-			    android:gravity="end"
-			    android:padding="10dp"
+			    android:gravity="center"
+			    android:paddingLeft="10dp"
+			    android:paddingTop="5dp"
+			    android:paddingRight="10dp"
 			    android:textSize="15sp"
-			    />            
+			    android:text="00-00 00:00"
+			    android:textColor="#40404040"/>             
         </LinearLayout>
-        <ImageView 
-            android:src="@drawable/spilt_line"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:scaleType="fitXY"/>
-<!-- 主办方        -->
+
+
+
+<!-- 主办单位        -->
         <LinearLayout 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 			<TextView 
-			    android:layout_width="0dp"
-			    android:layout_weight="1"
+			    android:layout_width="wrap_content"
 			    android:layout_height="wrap_content"
 				android:gravity="start"
 			    android:textSize="15sp"
-			    android:padding="10dp"
-			    android:text="主办方："/>              
+			    android:paddingLeft="10dp"
+			    android:paddingTop="5dp"
+			    android:text="主办单位："/>              
 			<TextView 
 			    android:id="@+id/host"
 			    android:layout_height="wrap_content"
 			    android:layout_width="0dp"
 			    android:layout_weight="2"
 			    android:gravity="end"
-			    android:padding="10dp"
+			    android:paddingLeft="10dp"
+			    android:paddingRight="10dp"
+			    android:paddingTop="5dp"
 			    android:textSize="15sp"
-			    />            
+			    android:text="我是主办单位"
+			    android:textColor="#40404040"/>            
         </LinearLayout>
-        <ImageView 
-            android:src="@drawable/spilt_line"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:scaleType="fitXY"/>
-<!-- 参加人数        -->
+<!-- 活动地点        -->
         <LinearLayout 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 			<TextView 
-			    android:layout_width="0dp"
-			    android:layout_weight="1"
+			    android:layout_width="wrap_content"
 			    android:layout_height="wrap_content"
 				android:gravity="start"
 			    android:textSize="15sp"
-			    android:padding="10dp"
-			    android:text="参加人数："/>              
+			    android:paddingLeft="10dp"
+			    android:paddingTop="5dp"
+			    android:text="活动地点 ："/>              
 			<TextView 
-			    android:id="@+id/apply_num"
+			    android:id="@+id/place"
 			    android:layout_height="wrap_content"
 			    android:layout_width="0dp"
 			    android:layout_weight="2"
 			    android:gravity="end"
-			    android:padding="10dp"
+			    android:paddingLeft="10dp"
+			    android:paddingRight="10dp"
+			    android:paddingTop="5dp"
 			    android:textSize="15sp"
-			    />            
-        </LinearLayout>
+			    android:text="我是活动地点"
+			    android:textColor="#40404040"/>            
+        </LinearLayout>        
         <ImageView 
             android:src="@drawable/spilt_line"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:scaleType="fitXY"/>               
+            android:scaleType="fitXY"/> 
+           
 </LinearLayout>

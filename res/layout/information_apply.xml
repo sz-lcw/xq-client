@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <include layout="@layout/information_apply_titlebar"/>
+	<TextView 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:gravity="start"
+	    android:textSize="8sp"
+	    android:padding="5dp"
+	    android:text="基本信息："
+	    android:textColor="#808080"	/>
+	<ImageView 
+	    android:src="@drawable/spilt_line"
+	    android:layout_width="match_parent"
+	    android:layout_height="1dp"
+	    android:scaleType="fitXY"/>
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content">
+	    <TextView 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:padding="5dp"
+	        android:textSize="15sp"
+	        android:text="姓名："/>
+	    <EditText 
+	        android:id="@+id/apply_name"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:hint="在此处填写"/>
+
+	</LinearLayout>    
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content">
+	    <TextView 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:padding="5dp"
+	        android:textSize="15sp"
+	        android:text="电话："/>
+	    <EditText 
+	        android:id="@+id/apply_tel"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:hint="在此处填写"/>
+
+	</LinearLayout>      
+</LinearLayout>
