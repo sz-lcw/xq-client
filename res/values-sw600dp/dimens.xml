@@ -4,5 +4,8 @@
          Customize dimensions originally defined in res/values/dimens.xml (such as
          screen margins) for sw600dp devices (e.g. 7" tablets) here.
     -->
-
+    <dimen name="title">17dp</dimen>  
+    <dimen name="rating">15dip</dimen>  
+    <dimen name="genre">13dip</dimen>  
+    <dimen name="year">12dip</dimen>
 </resources>
