@@ -23,24 +23,34 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**主页面的活动类（对应标题栏和导航栏）
+ * 
+ *
+ */
 public class ZhuActivity extends FragmentActivity implements OnClickListener {
-	private LinearLayout mTabWeixin;
-	private LinearLayout mTabFrd;
-	private LinearLayout mTabAddress;
-	private LinearLayout mTabSettings;
+	private static final int INFO = 0;
+	private static final int MSG = 1;
+	private static final int DISCOV = 2;
+	private static final int ME = 3;
+	
+	private LinearLayout mLayoutInfo;			//资讯
+	private LinearLayout mLayoutMsg;			//消息
+	private LinearLayout mLayoutDiscovery;		//发现
+	private LinearLayout mLayoutMe;			//我
 
-	private ImageButton mImgWeixin;
-	private ImageButton mImgFrd;
-	private ImageButton mImgAddress;
-	private ImageButton mImgSettings;
+	private ImageButton mImgInfo;
+	private ImageButton mImgMsg;
+	private ImageButton mImgDiscovery;
+	private ImageButton mImgMe;
 
-	private Fragment mTab01;
-	private Fragment mTab02;
-	private Fragment mTab03;
-	private Fragment mTab04;
+	private Fragment mTabInfo;
+	private Fragment mTabMsg;
+	private Fragment mTabDiscovery;
+	private Fragment mTabMe;
 	
 	
-	private TextView top_textTextView;
+	
+	private TextView top_textTextView;		//标题栏文字
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -49,26 +59,26 @@ public class ZhuActivity extends FragmentActivity implements OnClickListener {
 		setContentView(R.layout.main);
 		initView();
 		initEvent();
-		setSelect(0);
+		setSelect(INFO);
 	}
 
 	private void initEvent() {
-		mTabWeixin.setOnClickListener(this);
-		mTabFrd.setOnClickListener(this);
-		mTabAddress.setOnClickListener(this);
-		mTabSettings.setOnClickListener(this);
+		mLayoutInfo.setOnClickListener(this);
+		mLayoutMsg.setOnClickListener(this);
+		mLayoutDiscovery.setOnClickListener(this);
+		mLayoutMe.setOnClickListener(this);
 	}
 
 	private void initView() {
-		mTabWeixin = (LinearLayout) findViewById(R.id.id_tab_weixin);
-		mTabFrd = (LinearLayout) findViewById(R.id.id_tab_frd);
-		mTabAddress = (LinearLayout) findViewById(R.id.id_tab_address);
-		mTabSettings = (LinearLayout) findViewById(R.id.id_tab_settings);
+		mLayoutInfo = (LinearLayout) findViewById(R.id.id_tab_info);
+		mLayoutMsg = (LinearLayout) findViewById(R.id.id_tab_msg);
+		mLayoutDiscovery = (LinearLayout) findViewById(R.id.id_tab_disc);
+		mLayoutMe = (LinearLayout) findViewById(R.id.id_tab_me);
 
-		mImgWeixin = (ImageButton) findViewById(R.id.id_tab_weixin_img);
-		mImgFrd = (ImageButton) findViewById(R.id.id_tab_frd_img);
-		mImgAddress = (ImageButton) findViewById(R.id.id_tab_address_img);
-		mImgSettings = (ImageButton) findViewById(R.id.id_tab_settings_img);
+		mImgInfo = (ImageButton) findViewById(R.id.id_tab_info_img);
+		mImgMsg = (ImageButton) findViewById(R.id.id_tab_msg_img);
+		mImgDiscovery = (ImageButton) findViewById(R.id.id_tab_disc_img);
+		mImgMe = (ImageButton) findViewById(R.id.id_tab_me_img);
 		
 		top_textTextView=(TextView) findViewById(R.id.top_text);
 	}
@@ -80,42 +90,42 @@ public class ZhuActivity extends FragmentActivity implements OnClickListener {
 		// 把图片设置为亮的
 		// 设置内容区域
 		switch (i) {
-		case 0:
-			if (mTab01 == null) {
-				mTab01 = new InformationFragment();
-				transaction.add(R.id.id_content, mTab01);
+		case INFO:
+			if (mTabInfo == null) {//如果为空则添加该Fragment实例进transaction中，否则显示该Fragment
+				mTabInfo = new InformationFragment();
+				transaction.add(R.id.id_frag_main, mTabInfo);
 			} else {
-				transaction.show(mTab01);
+				transaction.show(mTabInfo);
 			}
-			mImgWeixin.setImageResource(R.drawable.tab_weixin_pressed);
+			mImgInfo.setImageResource(R.drawable.tab_info_pressed);
 			break;
-		case 1:
-			if (mTab02 == null) {
-				mTab02 = new MessageFragment();
-				transaction.add(R.id.id_content, mTab02);
+		case MSG:
+			if (mTabMsg == null) {
+				mTabMsg = new MessageFragment();
+				transaction.add(R.id.id_frag_main, mTabMsg);
 			} else {
-				transaction.show(mTab02);
+				transaction.show(mTabMsg);
 
 			}
-			mImgFrd.setImageResource(R.drawable.tab_find_frd_pressed);
+			mImgMsg.setImageResource(R.drawable.tab_find_frd_pressed);
 			break;
-		case 2:
-			if (mTab03 == null) {
-				mTab03 = new DiscoveryFragment();
-				transaction.add(R.id.id_content, mTab03);
+		case DISCOV:
+			if (mTabDiscovery == null) {
+				mTabDiscovery = new DiscoveryFragment();
+				transaction.add(R.id.id_frag_main, mTabDiscovery);
 			} else {
-				transaction.show(mTab03);
+				transaction.show(mTabDiscovery);
 			}
-			mImgAddress.setImageResource(R.drawable.tab_address_pressed);
+			mImgDiscovery.setImageResource(R.drawable.tab_address_pressed);
 			break;
-		case 3:
-			if (mTab04 == null) {
-				mTab04 = new MeFragment();
-				transaction.add(R.id.id_content, mTab04);
+		case ME:
+			if (mTabMe == null) {
+				mTabMe = new MeFragment();
+				transaction.add(R.id.id_frag_main, mTabMe);
 			} else {
-				transaction.show(mTab04);
+				transaction.show(mTabMe);
 			}
-			mImgSettings.setImageResource(R.drawable.tab_settings_pressed);
+			mImgMe.setImageResource(R.drawable.tab_me_pressed);
 			break;
 
 		default:
@@ -124,40 +134,43 @@ public class ZhuActivity extends FragmentActivity implements OnClickListener {
 
 		transaction.commit();
 	}
-
+	/**隐藏Fragment
+	 * @param transaction
+	 */
 	private void hideFragment(FragmentTransaction transaction) {
-		if (mTab01 != null) {
-			transaction.hide(mTab01);
+		if (mTabInfo != null) {
+			transaction.hide(mTabInfo);
 		}
-		if (mTab02 != null) {
-			transaction.hide(mTab02);
+		if (mTabMsg != null) {
+			transaction.hide(mTabMsg);
 		}
-		if (mTab03 != null) {
-			transaction.hide(mTab03);
+		if (mTabDiscovery != null) {
+			transaction.hide(mTabDiscovery);
 		}
-		if (mTab04 != null) {
-			transaction.hide(mTab04);
+		if (mTabMe != null) {
+			transaction.hide(mTabMe);
 		}
 	}
 
 	@Override
 	public void onClick(View v) {
 		resetImgs();
+		//设置标题栏文字
 		switch (v.getId()) {
-		case R.id.id_tab_weixin:
-			setSelect(0);
+		case R.id.id_tab_info:
+			setSelect(INFO);
 			top_textTextView.setText("资讯");
 			break;
-		case R.id.id_tab_frd:
-			setSelect(1);
+		case R.id.id_tab_msg:
+			setSelect(MSG);
 			top_textTextView.setText("消息");
 			break;
-		case R.id.id_tab_address:
-			setSelect(2);
+		case R.id.id_tab_disc:
+			setSelect(DISCOV);
 			top_textTextView.setText("发现");
 			break;
-		case R.id.id_tab_settings:
-			setSelect(3);
+		case R.id.id_tab_me:
+			setSelect(ME);
 			top_textTextView.setText("我");
 			break;
 
@@ -170,10 +183,10 @@ public class ZhuActivity extends FragmentActivity implements OnClickListener {
 	 * 切换图片至暗色
 	 */
 	private void resetImgs() {
-		mImgWeixin.setImageResource(R.drawable.tab_weixin_normal);
-		mImgFrd.setImageResource(R.drawable.tab_find_frd_normal);
-		mImgAddress.setImageResource(R.drawable.tab_address_normal);
-		mImgSettings.setImageResource(R.drawable.tab_settings_normal);
+		mImgInfo.setImageResource(R.drawable.tab_info_normal);
+		mImgMsg.setImageResource(R.drawable.tab_find_frd_normal);
+		mImgDiscovery.setImageResource(R.drawable.tab_address_normal);
+		mImgMe.setImageResource(R.drawable.tab_me_normal);
 	}
 
 	@Override
@@ -185,12 +198,15 @@ public class ZhuActivity extends FragmentActivity implements OnClickListener {
 		return false;
 	}
 
+	/**退出提醒
+	 * 
+	 */
 	private void showTips() {
 		AlertDialog alertDialog = new AlertDialog.Builder(ZhuActivity.this)
 				.setTitle("退出程序").setMessage("是否退出程序")
 				.setPositiveButton("确定", new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int which) {
-						ZhuActivity.this.finish();
+						ZhuActivity.this.finish();//不能完全关闭所有Activity
 					}
 				})
 				.setNegativeButton("取消", new DialogInterface.OnClickListener() {
