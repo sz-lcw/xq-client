@@ -203,7 +203,8 @@
 			    android:paddingTop="5dp"
 			    android:textSize="15sp"
 			    android:text="我是主办单位"
-			    android:textColor="#40404040"/>            
+			   
+			    android:textColor="#FF6600"/>            
         </LinearLayout>
 <!-- 活动地点        -->
         <LinearLayout 

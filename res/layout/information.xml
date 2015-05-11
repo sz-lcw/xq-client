@@ -2,14 +2,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" android:background="#f0f0f0">
+    android:orientation="vertical" android:background="#dde1ee">
 
-   
-
-    <me.maxwin.view.XListView
+    <com.scut.listviewutil.XListView
         android:id="@+id/xListView"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" android:cacheColorHint="#00000000">
-    </me.maxwin.view.XListView>
+    </com.scut.listviewutil.XListView>
 
 </LinearLayout>
