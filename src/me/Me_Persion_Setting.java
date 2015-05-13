@@ -252,9 +252,6 @@ public class Me_Persion_Setting extends Activity {
 	protected void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
-		
-        
-
 	}
 	@Override
 	protected void onStart() {
