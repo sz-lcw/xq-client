@@ -30,6 +30,7 @@ public class ItemAdapter extends ArrayAdapter<Item> {
 		ImageView itemImage = (ImageView)view.findViewById(R.id.item_image);
 		TextView  itemName = (TextView)view.findViewById(R.id.item_name);
 		itemImage.setImageResource(item.getImageId());
+		itemImage.setImageDrawable(item.getDrawable());
 		itemName.setText(item.getName());
 		return view;
 	}

@@ -68,7 +68,7 @@ public final class R {
     public static final class id {
         public static final int TextView01=0x7f090020;
         public static final int TextView02=0x7f09001f;
-        public static final int action_settings=0x7f09004c;
+        public static final int action_settings=0x7f09004d;
         public static final int apply_activity_btn=0x7f090021;
         public static final int apply_btn=0x7f09001a;
         public static final int apply_end=0x7f090025;
@@ -84,6 +84,8 @@ public final class R {
         public static final int end_time=0x7f090023;
         public static final int findpassword=0x7f090007;
         public static final int host=0x7f090026;
+        public static final int iconimage=0x7f09003c;
+        public static final int iconset=0x7f09003b;
         public static final int id_content=0x7f090029;
         public static final int id_tab_address=0x7f090011;
         public static final int id_tab_address_img=0x7f090012;
@@ -94,7 +96,7 @@ public final class R {
         public static final int id_tab_weixin=0x7f09000d;
         public static final int id_tab_weixin_img=0x7f09000e;
         public static final int imageView1=0x7f090000;
-        public static final int image_tap4=0x7f09003f;
+        public static final int image_tap4=0x7f090040;
         public static final int img1=0x7f09002e;
         public static final int img2=0x7f09002f;
         public static final int img3=0x7f090030;
@@ -106,8 +108,7 @@ public final class R {
         public static final int item_name=0x7f090032;
         public static final int listView1=0x7f090008;
         public static final int list_item_textview=0x7f090028;
-        public static final int list_view=0x7f09003b;
-        public static final int list_view1=0x7f09003c;
+        public static final int list_view1=0x7f09003d;
         public static final int login_password=0x7f090004;
         public static final int login_username=0x7f090002;
         public static final int msg_list_address=0x7f090039;
@@ -122,27 +123,27 @@ public final class R {
         public static final int register_school=0x7f09000b;
         public static final int register_username=0x7f090009;
         public static final int return_activity_btn=0x7f090019;
-        public static final int return_btn=0x7f090041;
-        public static final int spinner1=0x7f090042;
+        public static final int return_btn=0x7f090042;
+        public static final int spinner1=0x7f090043;
         public static final int tab04_persionSetting=0x7f09002a;
         public static final int tab04_setting=0x7f09002c;
         public static final int textView1=0x7f090001;
         public static final int textView2=0x7f090003;
-        public static final int text_tap4=0x7f090040;
+        public static final int text_tap4=0x7f090041;
         public static final int title=0x7f09001c;
-        public static final int viewGroup=0x7f09003e;
-        public static final int viewPager=0x7f09003d;
+        public static final int viewGroup=0x7f09003f;
+        public static final int viewPager=0x7f09003e;
         public static final int visibility_layout=0x7f09001b;
         public static final int xListView=0x7f090016;
-        public static final int xlistview_footer_content=0x7f090043;
-        public static final int xlistview_footer_hint_textview=0x7f090045;
-        public static final int xlistview_footer_progressbar=0x7f090044;
-        public static final int xlistview_header_arrow=0x7f09004a;
-        public static final int xlistview_header_content=0x7f090046;
-        public static final int xlistview_header_hint_textview=0x7f090048;
-        public static final int xlistview_header_progressbar=0x7f09004b;
-        public static final int xlistview_header_text=0x7f090047;
-        public static final int xlistview_header_time=0x7f090049;
+        public static final int xlistview_footer_content=0x7f090044;
+        public static final int xlistview_footer_hint_textview=0x7f090046;
+        public static final int xlistview_footer_progressbar=0x7f090045;
+        public static final int xlistview_header_arrow=0x7f09004b;
+        public static final int xlistview_header_content=0x7f090047;
+        public static final int xlistview_header_hint_textview=0x7f090049;
+        public static final int xlistview_header_progressbar=0x7f09004c;
+        public static final int xlistview_header_text=0x7f090048;
+        public static final int xlistview_header_time=0x7f09004a;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
