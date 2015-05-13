@@ -46,7 +46,7 @@ public class InformationFragment extends Fragment implements IXListViewListener 
 	 // Movies json url  
 	 private static final String url = "http://192.168.1.112:8080/xq/information_list.action";  
 	 private ProgressDialog pDialog;  
-	 private List<HeadInformation> headInformationsList = new ArrayList<HeadInformation>();  
+	 private List<HeadInformation> headInformationsList = new ArrayList<HeadInformation>();  //存放信息头的list
 	 private ListView listView;  
 	 private CustomListAdapter adapter;  
 	
@@ -118,8 +118,9 @@ public class InformationFragment extends Fragment implements IXListViewListener 
 		     /*getActionBar().setBackgroundDrawable(  
 		             new ColorDrawable(Color.parseColor("#1b1b1b")));  */
 
-		     // Creating volley request obj  
-		     JsonArrayRequest movieReq = new JsonArrayRequest(url,  
+		     // Creating volley request obj
+		   //JsonArrayRequest可把结果解析成JSONArray
+		     JsonArrayRequest movieReq = new JsonArrayRequest(url,
 		             new Response.Listener<JSONArray>() {  
 		                 @Override  
 		                 public void onResponse(JSONArray response) {  
@@ -133,7 +134,7 @@ public class InformationFragment extends Fragment implements IXListViewListener 
 		                             JSONObject obj = response.getJSONObject(i);  
 		                             HeadInformation head = new HeadInformation();  
 		                             head.setTitle(obj.getString("title"));  
-		                             head.setThumbnailUrl(obj.getString("headImage"));  
+		                             head.setImgUrl(obj.getString("headImage"));  
 		                             head.setHost(obj.getString("host"));
 		                             head.setId(obj.getInt("id"));
 		                                      
@@ -230,8 +231,11 @@ public class InformationFragment extends Fragment implements IXListViewListener 
 	     super.onDestroy();  
 	     hidePDialog();  
 	 }  
-
-	 private void hidePDialog() {  
+	 
+	 /**隐藏加载对话框
+	 * 
+	 */
+	private void hidePDialog() {  
 	     if (pDialog != null) {  
 	         pDialog.dismiss();  
 	         pDialog = null;  

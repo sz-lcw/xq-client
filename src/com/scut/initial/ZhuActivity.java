@@ -36,7 +36,7 @@ public class ZhuActivity extends FragmentActivity implements OnClickListener {
 	private LinearLayout mLayoutInfo;			//资讯
 	private LinearLayout mLayoutMsg;			//消息
 	private LinearLayout mLayoutDiscovery;		//发现
-	private LinearLayout mLayoutMe;			//我
+	private LinearLayout mLayoutMe;				//我
 
 	private ImageButton mImgInfo;
 	private ImageButton mImgMsg;

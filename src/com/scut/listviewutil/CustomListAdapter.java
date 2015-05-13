@@ -20,22 +20,22 @@ import com.scut.model.HeadInformation;
 public class CustomListAdapter extends BaseAdapter {  
     private Activity activity;  
     private LayoutInflater inflater;  
-    private List<HeadInformation> movieItems;  
-    ImageLoader imageLoader = AppController.getInstance().getImageLoader();  
+    private List<HeadInformation> infoItemList;  //存放信息头的list
+    ImageLoader imageLoader = AppController.getInstance().getImageLoader();//?  
    
-    public CustomListAdapter(Activity activity, List<HeadInformation> movieItems) {  
+    public CustomListAdapter(Activity activity, List<HeadInformation> infoItemList) {  
         this.activity = activity;  
-        this.movieItems = movieItems;  
+        this.infoItemList = infoItemList;  
     }  
    
     @Override  
     public int getCount() {  
-        return movieItems.size();  
+        return infoItemList.size();  
     }  
    
     @Override  
     public Object getItem(int location) {  
-        return movieItems.get(location);  
+        return infoItemList.get(location);  
     }  
    
     @Override  
@@ -45,48 +45,58 @@ public class CustomListAdapter extends BaseAdapter {
    
     @Override  
     public View getView(int position, View convertView, ViewGroup parent) {  
-   
+    	ViewHolder viewHolder;//用于对控件的实例进行缓存
         if (inflater == null)  
             inflater = (LayoutInflater) activity  
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);  
-        if (convertView == null)  
-            convertView = inflater.inflate(R.layout.list_row, null);  
-   
+        if (convertView == null){  
+            convertView = inflater.inflate(R.layout.list_row, null);  //加载item子项的布局
+            viewHolder = new ViewHolder();
+            viewHolder.img = (NetworkImageView) convertView.findViewById(R.id.thumbnail);
+            viewHolder.title = (TextView) convertView.findViewById(R.id.title);  
+            viewHolder.host = (TextView) convertView.findViewById(R.id.rating);
+            viewHolder.idTextView = (TextView) convertView.findViewById(R.id.contentId); 
+            convertView.setTag(viewHolder);		//将ViewHolder存储在View中
+        } else{
+        	viewHolder = (ViewHolder) convertView.getTag();//重新获取ViewHolder
+        }
         if (imageLoader == null)  
             imageLoader = AppController.getInstance().getImageLoader();  
-        NetworkImageView thumbNail = (NetworkImageView) convertView  
+/*        NetworkImageView img = (NetworkImageView) convertView  
                 .findViewById(R.id.thumbnail);  
         TextView title = (TextView) convertView.findViewById(R.id.title);  
-        TextView rating = (TextView) convertView.findViewById(R.id.rating);  
-      /*  TextView genre = (TextView) convertView.findViewById(R.id.genre);  */
-        TextView idTextView = (TextView) convertView.findViewById(R.id.contentId);  
+        TextView host = (TextView) convertView.findViewById(R.id.rating);  
+        TextView genre = (TextView) convertView.findViewById(R.id.genre);  
+        TextView idTextView = (TextView) convertView.findViewById(R.id.contentId);  */
         
         // getting movie data for the row  
-        HeadInformation m = movieItems.get(position);  
+        HeadInformation headInfo = infoItemList.get(position);  
    
         // thumbnail image  
-        thumbNail.setImageUrl(m.getThumbnailUrl(), imageLoader);  
-           
+        viewHolder.img.setImageUrl(headInfo.getImgUrl(), imageLoader);  
+        
         // title  
-        title.setText(m.getTitle());  
+        viewHolder.title.setText(headInfo.getTitle());  
            
-        // rating  
-        rating.setText("Host:" + String.valueOf(m.getHost()));  
+        // host  
+        viewHolder.host.setText("Host:" + String.valueOf(headInfo.getHost()));  
            
         
-        // genre  
-       /* String genreStr = "";  
-        for (String str : m.getGenre()) {  
-            genreStr += str + ", ";  
-        }  
-        genreStr = genreStr.length() > 0 ? genreStr.substring(0,  
-                genreStr.length() - 2) : genreStr;  
-        genre.setText(genreStr);  */
            
         // release year  
-      idTextView.setText(String.valueOf(m.getId()));  
-       idTextView.setVisibility(View.GONE);
+		viewHolder.idTextView.setText(String.valueOf(headInfo.getId()));  
+		viewHolder.idTextView.setVisibility(View.GONE);     
         return convertView;  
     }  
    
+    /**内部类，用于对控件的实例进行缓存
+     * @author szlcw
+     *
+     */
+    class ViewHolder{
+    	NetworkImageView img;
+    	TextView title;
+    	TextView host;
+    	TextView idTextView;
+    }
 }  
