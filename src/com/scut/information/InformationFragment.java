@@ -8,6 +8,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import libcore.io.CustomListAdapter;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -17,7 +19,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.scut.listviewutil.AppController;
-import com.scut.listviewutil.CustomListAdapter;
 import com.scut.listviewutil.XListView;
 import com.scut.listviewutil.XListView.IXListViewListener;
 import com.scut.model.HeadInformation;

@@ -10,6 +10,10 @@ import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;  
 
    
+/**ÕºœÒº”‘ÿøÿ÷∆¿‡
+ * @author 
+ *
+ */
 public class AppController extends Application {  
    
     public static final String TAG = AppController.class.getSimpleName();  
