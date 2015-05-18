@@ -19,32 +19,41 @@ import com.android.volley.toolbox.ImageLoader.ImageCache;
 
 
 
+
+import android.content.Context;
 import android.graphics.Bitmap;  
 import android.graphics.BitmapFactory;
 import android.os.Environment;
 import android.support.v4.util.LruCache;  
    
 /** 图像缓存类
- * 
+ *  增加了DiskLruCache，将数据缓存到SD卡中
  *
  */
-public class LruBitmapCache extends LruCache<String, Bitmap> implements  
+public class LruBitmapCache implements  
         ImageCache {
-    final static int DISK_MAX_SIZE  = (int) (Runtime.getRuntime().maxMemory() / 1024);  
-    final static int RAM_CACHE_SIZE  = DISK_MAX_SIZE / 8;
+    final static int DISK_MAX_SIZE  = 20 * 1024 * 1024;    
+    final static int RAM_CACHE_SIZE  = 5 * 1024 * 1024;  
     String DISK_CACHE_DIR = "image"; 
     DiskLruCache diskLruCache;  
+    private Context mContext;
+    private LruCache<String, Bitmap>  lruCache;
+    
     public static int getDefaultLruCacheSize() {  
         return RAM_CACHE_SIZE;  
     }  
    
-    public LruBitmapCache() {  
-        this(getDefaultLruCacheSize());
-    }  
-   
-    public LruBitmapCache(int sizeInKiloBytes) {  
-        super(sizeInKiloBytes);
-        File cacheDir = new File(Environment.getExternalStorageDirectory(), DISK_CACHE_DIR);  
+    public LruBitmapCache(Context context) {  
+    	//this(getDefaultLruCacheSize());
+    	mContext = context;    	
+    	this.lruCache = new LruCache<String, Bitmap>(DISK_MAX_SIZE) {  
+            @Override  
+            protected int sizeOf(String key, Bitmap value) {  
+            	return value.getRowBytes() * value.getHeight();  
+            }  
+        };
+        //File cacheDir = new File(Environment.getExternalStorageDirectory(), DISK_CACHE_DIR);
+        File cacheDir = Utils.getDiskLruCacheDir(mContext, DISK_CACHE_DIR); 
         if(!cacheDir.exists())  
         {  
             cacheDir.mkdir();  
@@ -53,24 +62,25 @@ public class LruBitmapCache extends LruCache<String, Bitmap> implements
             diskLruCache = DiskLruCache.open(cacheDir, 1, 1, DISK_MAX_SIZE);  
         } catch (IOException e) {  
             e.printStackTrace();  
-        }        
+        }         
     }  
    
-    @Override  
+   
+/*    @Override  
     protected int sizeOf(String key, Bitmap value) {  
         return value.getRowBytes() * value.getHeight() / 1024;  
-    }  
+    }  */
    
     @Override  
     public Bitmap getBitmap(String url) {  
         //return get(url); 
         String key=generateKey(url);  
-        Bitmap bmp = get(key);  
+        Bitmap bmp = lruCache.get(key);  
         if (bmp == null) {  
             bmp = getBitmapFromDiskLruCache(key);  //将图像从缓存中取出
             //从磁盘读出后，放入内存  
             if(bmp!=null) {
-                put(key,bmp);
+            	lruCache.put(key,bmp);
             }
         }
         return bmp;     	
@@ -81,7 +91,7 @@ public class LruBitmapCache extends LruCache<String, Bitmap> implements
         //put(url, bitmap); 
         String key=generateKey(url);  
         //put(url, bitmap);  
-        put(key,bitmap);
+        lruCache.put(key,bitmap);
         putBitmapToDiskLruCache(key,bitmap);     	
     }
     
@@ -97,7 +107,8 @@ public class LruBitmapCache extends LruCache<String, Bitmap> implements
                 OutputStream outputStream = editor.newOutputStream(0);  
                 bitmap.compress(Bitmap.CompressFormat.PNG, 0, outputStream);  
                 editor.commit();  
-            }  
+            }
+            diskLruCache.flush();
         } catch (IOException e) {  
             e.printStackTrace();  
         }  
