@@ -93,7 +93,7 @@ public class Me_Persion_Setting extends Activity {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
         byte[] info = baos.toByteArray();
-        if(info.length!=0){
+        if(bitmap.getHeight()!=0){
         	Drawable drawable = new BitmapDrawable(bitmap);
     		iconImage.setImageDrawable(drawable);
         }
