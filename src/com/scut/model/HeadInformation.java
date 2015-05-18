@@ -2,20 +2,26 @@ package com.scut.model;
    
 import java.util.ArrayList;  
    
+/**每个活动头的信息类
+ * @author swb
+ *
+ */
 public class HeadInformation {  
-    private String title, thumbnailUrl,host;  
-    private int id;
+    private String title;				//活动标题
+    private String imgUrl;				//图片地址
+    private String host;				//主办方
+    private int id;						//每个活动对应的独立id
 	public String getTitle() {
 		return title;
 	}
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getThumbnailUrl() {
-		return thumbnailUrl;
+	public String getImgUrl() {
+		return imgUrl;
 	}
-	public void setThumbnailUrl(String thumbnailUrl) {
-		this.thumbnailUrl = thumbnailUrl;
+	public void setImgUrl(String thumbnailUrl) {
+		this.imgUrl = thumbnailUrl;
 	}
 	public String getHost() {
 		return host;
