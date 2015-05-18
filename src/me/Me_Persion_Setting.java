@@ -12,12 +12,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import itat.zttc.login.R;
+import android.R.drawable;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.DialogInterface.OnClickListener;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
@@ -53,10 +55,49 @@ public class Me_Persion_Setting extends Activity {
 		ListView listView1 = (ListView) findViewById(R.id.list_view1);
 		final Item1Adapter adapter1 = new Item1Adapter(Me_Persion_Setting.this,
 		R.layout.me_item1, itemList1);
+		final SharedPreferences.Editor editor = getSharedPreferences("data",MODE_PRIVATE).edit();
+        final SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
 		listView1.setAdapter(adapter1);    
         iconSet = (LinearLayout) findViewById(R.id.iconset);       
         iconImage = (ImageView) findViewById(R.id.iconimage);
-       
+        String nicknameset = pref.getString("nickname", "");
+        String schoolset = pref.getString("school", "");
+        String genderset = pref.getString("gender", "");
+        if(nicknameset!="")
+        {
+	        nickname.setDetail(nicknameset);
+	        adapter1.notifyDataSetChanged();
+        }else{
+        	 nickname.setDetail("null");
+ 	        adapter1.notifyDataSetChanged();
+        }
+        if(schoolset!="")
+        {
+	        school.setDetail(schoolset);
+	        adapter1.notifyDataSetChanged();
+        }else{
+        	 school.setDetail("null");
+ 	        adapter1.notifyDataSetChanged();
+        }
+        if(genderset!="")
+        {
+	        gender.setDetail(genderset);
+	        adapter1.notifyDataSetChanged();
+        }else{
+        	 gender.setDetail("男");
+ 	        adapter1.notifyDataSetChanged();
+        }
+        
+        String file_name = Environment.getExternalStorageDirectory().toString()+"/"+"save.png";
+        Bitmap bitmap = BitmapFactory.decodeFile(file_name);
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
+        byte[] info = baos.toByteArray();
+        if(info.length!=0){
+        	Drawable drawable = new BitmapDrawable(bitmap);
+    		iconImage.setImageDrawable(drawable);
+        }
+        
         /*点击头像设置的一些操作，包括对话框的弹出、相册和拍照的选择*/
 		View.OnClickListener listener = new View.OnClickListener() {
 
@@ -112,6 +153,7 @@ public class Me_Persion_Setting extends Activity {
 				LayoutInflater layoutInflater = LayoutInflater.from(Me_Persion_Setting.this);
                 View dialog = layoutInflater.inflate(R.layout.me_dialog, null);
                 final EditText dia = (EditText)dialog.findViewById(R.id.dialog);
+                
 				AlertDialog.Builder builder = new AlertDialog.Builder(Me_Persion_Setting.this);
 				if(itemnum.getInfo()=="昵称")
 				{
@@ -119,11 +161,14 @@ public class Me_Persion_Setting extends Activity {
 					.setPositiveButton("确定",new OnClickListener() {
 						public void onClick(DialogInterface dialog, int which) {
 							// TODO Auto-generated method stub
-							String val="Daniel";
+							String val="";
 				     		val = dia.getText().toString();
-							nickname.setDetail(val);
-							adapter1.notifyDataSetChanged();
-							
+				     		if(!val.isEmpty()){
+								nickname.setDetail(val);
+								adapter1.notifyDataSetChanged();
+								editor.putString("nickname", val);
+								editor.commit();	
+				     		}
 						}
 					} )
 					.setNegativeButton("取消", null)
@@ -136,10 +181,14 @@ public class Me_Persion_Setting extends Activity {
 					.setPositiveButton("确定",new OnClickListener() {
 						public void onClick(DialogInterface dialog, int which) {
 							// TODO Auto-generated method stub
-							String val;
+							String val="";
 				     		val = dia.getText().toString();
-							school.setDetail(val);
-							adapter1.notifyDataSetChanged();
+				     		if(!val.isEmpty()){
+			     			school.setDetail(val);
+			     		    adapter1.notifyDataSetChanged();
+							editor.putString("school", val);
+							editor.commit();
+						    }
 						}
 					} )
 					.setNegativeButton("取消", null)
@@ -155,8 +204,14 @@ public class Me_Persion_Setting extends Activity {
 					public void onClick(DialogInterface dialog, int which) {
 						// TODO Auto-generated method stub
 						String hint[]={"男","女"};
-					
-						gender.setDetail(hint[which]);
+					    if(which==0){
+					    editor.putString("gender", "男");
+					    editor.commit();
+					    }else{
+					    editor.putString("gender", "女");
+						editor.commit();
+					    }
+					  gender.setDetail(hint[which]);
 						adapter1.notifyDataSetChanged();
 						dialog.dismiss();
 					}
@@ -224,11 +279,11 @@ public class Me_Persion_Setting extends Activity {
 			if(Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState()))
 			{
 			//	Toast.makeText(Me_Persion_Setting.this, "123", Toast.LENGTH_SHORT).show();
-				File file = new File(Environment.getExternalStorageDirectory().getPath());
+				File file = new File(Environment.getExternalStorageDirectory(),"save.png");
 				try {
 					file.createNewFile();
 					FileOutputStream out = new FileOutputStream(file); 
-					photo.compress(Bitmap.CompressFormat.JPEG, 100, out); 
+					photo.compress(Bitmap.CompressFormat.PNG, 100, out); 
 					out.flush(); 
 					out.close(); 
 				} catch (IOException e) {
@@ -248,23 +303,5 @@ public class Me_Persion_Setting extends Activity {
 			school = new Item1("学校","华南理工大学");
 			itemList1.add(school);
 		}
-	@Override
-	protected void onResume() {
-		// TODO Auto-generated method stub
-		super.onResume();
-	}
-	@Override
-	protected void onStart() {
-		// TODO Auto-generated method stub
-		super.onStart();
-		 FileInputStream in;
-			try {
-				in = new FileInputStream(Environment.getExternalStorageDirectory().getPath());
-				Bitmap bitmap  = BitmapFactory.decodeStream(in);
-				Drawable drawable = new BitmapDrawable(bitmap);
-			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-	}
+	
 }
