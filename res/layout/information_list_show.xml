@@ -16,7 +16,7 @@
         android:orientation="vertical"
         >
     	<TextView 
-            android:id="@+id/title"
+            android:id="@+id/title_in_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="start"

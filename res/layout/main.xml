@@ -4,9 +4,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
     
-
+    <include layout="@layout/top"/>
+	<!--4个按钮的Fragment  -->
 	<FrameLayout 
-	    android:id="@+id/id_content"
+	    android:id="@+id/id_frag_main"
 	    android:layout_width="fill_parent"
 	    android:layout_height="0dp"
 	    android:layout_weight="1"
