@@ -7,7 +7,7 @@ public class User {
 	public static final int TYPE_ADMIN = 2;			//administrator
 	
 	private String name;	
-	private String passward;
+	private String headImgPath;
 	private String email;
 	private int number;		//±àºÅ
 	private String school;
@@ -15,10 +15,10 @@ public class User {
 	//private Image head;
 
 	
-	public User(int number,String name,String passward,String email,String school,int type){
+	public User(int number,String name,String headImgPath,String email,String school,int type){
 		this.number = number;
 		this.name = name;
-		this.passward = passward;
+		this.headImgPath = headImgPath;
 		this.email = email;
 		this.school = school;
 		this.type = type;
@@ -29,8 +29,8 @@ public class User {
 	public String getName(){
 		return name;
 	}	
-	public String getPassward(){
-		return passward;
+	public String getHeadImgPath(){
+		return headImgPath;
 	}
 	public String getEmail(){
 		return email;
