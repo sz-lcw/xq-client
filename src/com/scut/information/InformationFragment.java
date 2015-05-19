@@ -184,7 +184,7 @@ public class InformationFragment extends Fragment implements IXListViewListener 
 		    	}
 		
 		     
-		     
+		
 		     
 		return viewMain;
 
